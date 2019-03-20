@@ -1,0 +1,48 @@
+header, footer {
+    padding: 1em;
+    color: black;
+    background-color: rgba(158, 158, 158, 0.34);
+    clear: left;
+    text-align: center;
+}
+.inset{
+
+    border-width:5px;  
+    border-style:inset;
+    padding-right:0px;
+    padding-left:0px;
+
+}
+.clsname{
+	    background-color: white;
+}
+select#soflow-color {
+  
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+
+   background-position: 100% center;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+ color: #fff;
+   background-image: -webkit-linear-gradient(#337ab7, #337ab7 100%, #337ab7);
+   background-color: #337ab7;
+
+   -moz-border-radius: 20px;
+  
+   padding-left: 15px;
+   font-size: inherit;
+   margin: 20px;
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+
+}
+
+
+#lstBox1,#lstBox2{
+	overflow-y:hidden;
+	    background-color: rgb(186, 187, 187);
+}

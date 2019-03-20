@@ -1,0 +1,528 @@
+
+
+.padding-left0
+{
+	padding-left:0;
+}
+
+
+/* Let's get this party started */
+.horizontal-content::-webkit-scrollbar {
+  height: 8px;
+}
+
+/* Track */
+
+.horizontal-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 2px rgba(51, 122, 183, 0.83);
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+}
+
+/* Handle */
+.horizontal-content::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  background: #337ab7;
+  -webkit-box-shadow: inset 0 0 2px rgba(51, 122, 183, 0.83);
+}
+
+/* Let's get this party started */
+.side-content::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+.side-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(51, 122, 183, 0.83);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Handle */
+.side-content::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #337ab7;
+  -webkit-box-shadow: inset 0 0 6px rgba(51, 122, 183, 0.83);
+}
+
+.side-content
+{
+	/* background-color:rgba(51, 122, 183, 0.83);  */
+	/* color:white; */
+	 height:575px; 
+	overflow-x:hidden; 
+	padding: 10px;
+}
+
+#EditOpportunityVertical option
+{
+	width:20px !important;
+}
+.padding-right0
+{
+	padding-right:0 !important;
+}
+.somedropdowns
+{
+	
+	width: 86.333%;
+}
+.width140px
+{
+	width:140px;
+}
+.form-group label
+{
+	text-align:left;
+}
+.control-label
+{
+	padding-top:7px;
+}
+.form-control-static
+{
+	margin-bottom:5px;
+}
+@media (min-width: 768px)
+{
+	#modal_oppId {
+    width: 1150px !important;
+    margin: 50px auto;
+}
+}
+
+
+
+/*for container*/
+.class1 {
+    box-shadow: 2px 0px 5px grey;
+}
+/* for employee all*/
+.name {
+    float: right;
+    padding: 5px;
+}
+
+.dropdown {
+    padding: 5px;
+    float: right;
+}
+
+/*search*/
+.search1 {
+    float: right;
+    margin: 10px;
+}
+
+
+
+/*for grid view*/
+.box {
+        border: 1px solid rgba(128, 128, 128, 0.33);
+    margin-bottom: 4px;
+    padding: 5px;
+}
+
+/*for thumbnail view*/
+table.table > tr > td {
+    padding: 5px;
+}
+
+/*scroll for table list view*/
+.class4 {
+    overflow-x: auto;
+    overflow-y: auto;
+    white-space: nowrap;
+}
+
+/*scroll for grid view*/
+#m3 {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/*scroll for thumbnail view*/
+#m4 {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/*ashwini css*/
+hr {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+
+#home3 {
+    overflow-x: scroll;
+    white-space: nowrap;
+    overflow-y:scroll;
+    
+}
+
+
+
+
+/*savitha's sytlesheet*/
+
+.nav-tabs {
+    border-bottom: 1px solid rgba(0, 173, 255, 0.8);
+}
+
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        border: none;
+    }
+
+        .nav-tabs > li.active > a:hover {
+            text-decoration: underline;
+            padding-bottom: 10px;
+        }
+
+    .nav-tabs > li a {
+        color: black;
+        padding: 10px;
+    }
+
+
+
+.grid {
+    border: 1px solid lightgrey;
+    margin-bottom: 5px;
+}
+
+.nav {
+    padding-bottom: 0px;
+}
+
+.link {
+    width: 500px;
+    height: 500px;
+}
+
+.content {
+    padding: 8px;
+}
+
+.pagination a {
+    padding: 10px;
+}
+
+.matter {
+    border: 1px solid lightgrey;
+    margin-bottom: 3px;
+}
+
+.details {
+    text-align: center;
+}
+
+.table-responsive {
+    overflow-x: scroll;
+    overflow-y: scroll;
+    white-space: nowrap;
+}
+
+.glyphicon.glyphicon-refresh {
+    float: right;
+    padding: 5px;
+}
+
+.one {
+    float: right;
+}
+
+.two {
+    float: left;
+}
+
+.table tr:hover {
+    background-color: lightgrey;
+}
+
+.top {
+    padding: 10px;
+    background: lightgrey;
+}
+
+.mapping {
+    float: right;
+    /*border: 1px solid grey;*/
+}
+
+
+.forms {
+    width: auto;
+}
+
+section {
+  
+    height: 1000px;
+}
+
+.table tr:hover {
+    background-color: lightgrey;
+}
+
+.top {
+    padding: 10px;
+    background: lightgrey;
+}
+
+.mapping {
+    float: right;
+    /*border: 1px solid grey;*/
+}
+
+.table-responsive {
+    overflow-x: scroll;
+    overflow-y: scroll;
+    white-space: nowrap;
+        height: 440px;
+}
+
+.glyphicon.glyphicon-refresh {
+    float: right;
+    padding: 5px;
+}
+
+
+/*product css*/
+
+.page-header {
+    background-color: white;
+    padding-bottom: 0px;
+    margin: 0px;
+    border-bottom: 0px;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+    margin-bottom: 0px;
+}
+
+.nav > a {
+    padding: 7px;
+}
+
+/*.sidebar {
+    list-style:none;
+    background-color: #fff;
+    width: 45px;
+    height: 730px;
+    margin: 40px 1px 0px 1px;
+}*/
+/*.leftsidebar {
+    position: relative;
+    top: -12px;
+    left: 57px;
+}*/
+
+.sidebar {
+    position: relative;
+    top: 7px;
+    left: 60px;
+}
+
+.sidebar {
+    background-color: rgba(0,0,0,.25);
+    width: 35px;
+    height: 514px;
+    margin: 40px 1px 0px 1px;
+    float: left;
+    padding: 6px;
+}
+
+    .sidebar .glyphicon {
+        padding: 10px 1px;
+    }
+
+.glyphicon {
+    color: #333;
+}
+
+
+section {
+    background-color: #7195a7;
+    background-image:url("../Images/Connected_Customer.jpg") ;
+    background-repeat: no-repeat;
+}
+
+    section > .navbar-left {
+        background-color: #cce6ff;
+        padding-bottom: 16px;
+    }
+
+div > .navbar-left > a {
+    padding: 5px;
+}
+
+.navtabs {
+    margin-bottom: 20px
+}
+
+section .navtabs ul li a {
+    color: black;
+}
+
+/*article>.navbar-default{
+	margin:5px;
+	padding:5px;
+	background-color:white;
+	
+}
+article>.navbar-default>a{
+	padding:5px;
+}*/
+
+.right-nav {
+    background-color: rgba(0,0,0,.075);
+    position: relative;
+    transform: rotate(90deg);
+    left: 150px;
+    top: 294px;
+    padding: 4px;
+}
+
+    .right-nav > a {
+        padding: 5px 10px;
+        color: white;
+    }
+
+aside > .navbar-left {
+    background-color: white;
+    position: relative;
+}
+
+
+/*div>.col-sm-12{
+	/*height:659px;*/
+background-color:white;
+/*border-style:solid;
+	border-color:grey;*/
+/*position:relative;
+	bottom:18px;
+	left:5px;
+     width: 995px;
+}*/
+div > .navbar-default > a {
+    padding: 5px;
+}
+
+.columnwidth {
+    /*width: 48px;*/
+}
+
+/*Savitha styles for Product page */
+
+
+
+
+.container {
+    background-color: white;
+    width: 84%;
+}
+
+.middle {
+    box-shadow: 2px 0px 5px grey;
+}
+
+/*.tab-content {
+    border-bottom: 1px solid black;
+}*/
+
+.nav-tabs {
+    border-bottom: 1px solid rgba(0, 173, 255, 0.8);
+    ;
+}
+
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        border: none;
+        background-color: #337ab7;
+        color: white;
+    }
+
+        .nav-tabs > li.active > a:hover {
+            text-decoration: underline;
+            padding-bottom: 10px;
+        }
+
+    .nav-tabs > li a {
+        color: black;
+        padding: 10px;
+    }
+
+.search {
+    float: right;
+    margin: 10px;
+}
+
+/*.box {
+    border: 1px solid grey;
+    margin: 5px;
+    padding: 5px;
+}*/
+
+.grid1 {
+  padding: 2px;
+    top: -20px;
+}
+
+.grid2 {
+    padding: 2px;
+}
+
+#img {
+    float: left;
+    padding: 10px;
+}
+
+
+.search {
+    float: right;
+}
+
+
+div > .col-sm-12 {
+    background-color: white;
+    div > .navbar-default > a
+
+{
+    padding: 5px;
+}
+
+ul.nav.nav-tabs {
+    border-bottom: 0px;
+    border-color: transparent;
+}
+
+h6 {
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+    border-bottom-width: 1px;
+}
+
+.navbar.navbar-default {
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+
+
+table.table.table-responsive.table-hover {
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+
