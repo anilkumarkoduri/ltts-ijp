@@ -1,0 +1,2184 @@
+﻿
+.preloader
+{
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    position: fixed;
+    z-index: 99999;
+    background: #fff;
+}
+
+    .preloader .cssload-speeding-wheel
+    {
+        position: absolute;
+        top: calc(50% - 3.5px);
+        left: calc(50% - 3.5px);
+    }
+
+*
+{
+    outline: none !important;
+}
+
+body
+{
+    background: #ffffff;
+    font-family: Tahoma, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    color: #686868;
+    font-size: 13px;
+}
+
+html
+{
+    position: relative;
+    min-height: 100%;
+}
+
+.navbar
+{
+    margin-bottom: 0px !important;
+    height: 60px;
+}
+
+.footer
+{
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+}
+
+    .footer p
+    {
+        display: block;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+.navbar-brand
+{
+    float: left;
+    height: 100%;
+    padding: 15px 15px;
+    font-size: 35px;
+    line-height: 20px;
+    font-weight: 800;
+}
+
+.navbar-default .navbar-brand
+{
+    color: #fff;
+}
+
+.navbar-nav > li
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-header
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navbar-right
+{
+    margin-right: 0px !important;
+}
+
+.navbar-default
+{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.navbar-right ul li
+{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+    .navbar-right ul li a, .navbar-right ul li span
+    {
+        font-size: 16px;
+        font-weight: 800;
+    }
+
+.navbar-nav > li > span
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar-default .navbar-nav > li > a
+{
+    color: #fff;
+}
+
+    .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover
+    {
+        color: #fff;
+        background-color: transparent;
+    }
+
+a i
+{
+    padding-right: 10px;
+}
+/*Wave Effeects*/
+.waves-effect
+{
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+    .waves-effect .waves-ripple
+    {
+        position: absolute;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        margin-top: -10px;
+        margin-left: -10px;
+        opacity: 0;
+        background: rgba(0, 0, 0, 0.08);
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+        -webkit-transition-property: -webkit-transform, opacity;
+        -moz-transition-property: -moz-transform, opacity;
+        -o-transition-property: -o-transform, opacity;
+        transition-property: transform, opacity;
+        -webkit-transform: scale(0) translate(0, 0);
+        -moz-transform: scale(0) translate(0, 0);
+        -ms-transform: scale(0) translate(0, 0);
+        -o-transform: scale(0) translate(0, 0);
+        transform: scale(0) translate(0, 0);
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        transform: scale(0);
+        pointer-events: none;
+    }
+
+    .waves-effect.waves-light .waves-ripple
+    {
+        background: rgba(255, 255, 255, 0.4);
+        background: -webkit-radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+        background: -o-radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+        background: -moz-radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+        background: radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+    }
+
+    .waves-effect.waves-classic .waves-ripple
+    {
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .waves-effect.waves-classic.waves-light .waves-ripple
+    {
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+
+/* ----------------------------- Menu Bar Start ------------------------*/
+
+.sub-header
+{
+    position: relative;
+    width: 100%;
+    background: #4484CE;
+    margin-top: 0px;
+    height: 40px;
+}
+
+nav
+{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#cssmenu, #cssmenu ul, #cssmenu ul li, #cssmenu ul li a, #cssmenu #head-mobile
+{
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+    #cssmenu:after, #cssmenu > ul:after
+    {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }
+
+    #cssmenu #head-mobile
+    {
+        display: none;
+    }
+
+#cssmenu
+{
+    font-family: sans-serif;
+    background: #4484CE;
+    width: 90%;
+    height: inherit;
+}
+
+    #cssmenu > ul
+    {
+        margin-bottom: 0px !important;
+        padding: 0px;
+        text-align: center;
+        margin: auto;
+    }
+
+        #cssmenu > ul > li
+        {
+            float: left;
+        }
+
+            #cssmenu > ul > li > a
+            {
+                padding: 13px 17px;
+                font-size: 13px;
+                ;
+                text-decoration: none;
+                color: #eee;
+                font-weight: 800;
+            }
+
+                #cssmenu > ul > li > a.home-icon
+                {
+                    padding: 6px 20px;
+                }
+
+                #cssmenu > ul > li > a > i
+                {
+                    padding-right: 15px;
+                }
+
+                #cssmenu > ul > li > a > .fa-home
+                {
+                    padding-right: 0px !important;
+                }
+
+            #cssmenu > ul > li:hover, #cssmenu ul li.active
+            {
+                margin: 0px;
+            }
+
+                #cssmenu > ul > li:hover > a, #cssmenu ul li.active a
+                {
+                    color: #fff;
+                    font-weight: 800;
+                }
+
+                #cssmenu > ul > li:hover, #cssmenu ul li.active:hover, #cssmenu ul li.active, #cssmenu ul li.has-sub.active:hover
+                {
+                    background: #76abe8 !important;
+                    -webkit-transition: background .3s ease;
+                    -ms-transition: background .3s ease;
+                    transition: background .3s ease;
+                }
+
+            #cssmenu > ul > li.has-sub > a
+            {
+                padding-right: 30px;
+            }
+
+                #cssmenu > ul > li.has-sub > a:after
+                {
+                    position: absolute;
+                    top: 22px;
+                    right: 11px;
+                    width: 8px;
+                    height: 2px;
+                    display: block;
+                    background: #ddd;
+                    content: '';
+                }
+
+                #cssmenu > ul > li.has-sub > a:before
+                {
+                    position: absolute;
+                    top: 19px;
+                    right: 14px;
+                    display: block;
+                    width: 2px;
+                    height: 8px;
+                    background: #ddd;
+                    content: '';
+                    -webkit-transition: all .25s ease;
+                    -ms-transition: all .25s ease;
+                    transition: all .25s ease;
+                }
+
+            #cssmenu > ul > li.has-sub:hover > a:before
+            {
+                top: 23px;
+                height: 0;
+            }
+
+    #cssmenu ul ul
+    {
+        position: absolute;
+        left: -9999px;
+    }
+
+        #cssmenu ul ul li
+        {
+            height: 0;
+            -webkit-transition: all .25s ease;
+            -ms-transition: all .25s ease;
+            background: #333;
+            transition: all .25s ease;
+        }
+
+            #cssmenu ul ul li:hover
+            {
+            }
+
+    #cssmenu li:hover > ul
+    {
+        left: auto;
+    }
+
+        #cssmenu li:hover > ul > li
+        {
+            height: 35px;
+        }
+
+    #cssmenu ul ul ul
+    {
+        margin-left: 100%;
+        top: 0;
+    }
+
+    #cssmenu ul ul li a
+    {
+        border-bottom: 1px solid rgba(150,150,150,0.15);
+        padding: 11px 15px;
+        width: 170px;
+        font-size: 12px;
+        text-decoration: none;
+        color: #ddd;
+        font-weight: 400;
+    }
+
+    #cssmenu ul ul li:last-child > a, #cssmenu ul ul li.last-item > a
+    {
+        border-bottom: 0;
+    }
+
+    #cssmenu ul ul li:hover > a, #cssmenu ul ul li a:hover
+    {
+        color: #fff;
+    }
+
+    #cssmenu ul ul li.has-sub > a:after
+    {
+        position: absolute;
+        top: 16px;
+        right: 11px;
+        width: 8px;
+        height: 2px;
+        display: block;
+        background: #ddd;
+        content: '';
+    }
+
+    #cssmenu ul ul li.has-sub > a:before
+    {
+        position: absolute;
+        top: 13px;
+        right: 14px;
+        display: block;
+        width: 2px;
+        height: 8px;
+        background: #ddd;
+        content: '';
+        -webkit-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+        transition: all .25s ease;
+    }
+
+    #cssmenu ul ul > li.has-sub:hover > a:before
+    {
+        top: 17px;
+        height: 0;
+    }
+
+    #cssmenu ul ul li.has-sub:hover, #cssmenu ul li.has-sub ul li.has-sub ul li:hover
+    {
+        background: #363636;
+    }
+
+    #cssmenu ul ul ul li.active a
+    {
+        border-left: 1px solid #333;
+    }
+
+    #cssmenu > ul > li.has-sub > ul > li.active > a, #cssmenu > ul ul > li.has-sub > ul > li.active > a
+    {
+        border-top: 1px solid #333;
+    }
+
+@media screen and (max-width:700px)
+{
+    .logo
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 46px;
+        text-align: center;
+        padding: 10px 0 0 0;
+        float: none;
+    }
+
+    .logo2
+    {
+        display: none;
+    }
+
+    nav
+    {
+        width: 100%;
+    }
+
+    #cssmenu
+    {
+        width: 100%;
+    }
+
+        #cssmenu ul
+        {
+            width: 100%;
+            display: none;
+        }
+
+            #cssmenu ul li
+            {
+                width: 100%;
+                border-top: 1px solid #111;
+                text-align: left;
+            }
+
+                #cssmenu ul li:hover
+                {
+                    background: #363636;
+                }
+
+            #cssmenu ul ul li, #cssmenu li:hover > ul > li
+            {
+                height: auto;
+            }
+
+                #cssmenu ul li a, #cssmenu ul ul li a
+                {
+                    width: 100%;
+                    border-bottom: 0;
+                }
+
+        #cssmenu > ul > li
+        {
+            float: none;
+        }
+
+        #cssmenu ul ul li a
+        {
+            padding-left: 25px;
+        }
+
+        #cssmenu ul ul li
+        {
+            background: #333!important;
+        }
+
+            #cssmenu ul ul li:hover
+            {
+                background: #363636!important;
+            }
+
+        #cssmenu ul ul ul li a
+        {
+            padding-left: 35px;
+        }
+
+        #cssmenu ul ul li a
+        {
+            color: #ddd;
+            background: none;
+        }
+
+        #cssmenu ul ul li:hover > a, #cssmenu ul ul li.active > a
+        {
+            color: #fff;
+        }
+
+        #cssmenu ul ul, #cssmenu ul ul ul
+        {
+            position: relative;
+            left: 0;
+            width: 100%;
+            margin: 0;
+            text-align: left;
+        }
+
+            #cssmenu > ul > li.has-sub > a:after, #cssmenu > ul > li.has-sub > a:before, #cssmenu ul ul > li.has-sub > a:after, #cssmenu ul ul > li.has-sub > a:before
+            {
+                display: none;
+            }
+
+        #cssmenu #head-mobile
+        {
+            display: block;
+            padding: 23px;
+            color: #ddd;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+    .button
+    {
+        width: 55px;
+        height: 46px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        z-index: 12399994;
+    }
+
+        .button:after
+        {
+            position: absolute;
+            top: 22px;
+            right: 20px;
+            display: block;
+            height: 4px;
+            width: 20px;
+            border-top: 2px solid #dddddd;
+            border-bottom: 2px solid #dddddd;
+            content: '';
+        }
+
+        .button:before
+        {
+            -webkit-transition: all .3s ease;
+            -ms-transition: all .3s ease;
+            transition: all .3s ease;
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            display: block;
+            height: 2px;
+            width: 20px;
+            background: #ddd;
+            content: '';
+        }
+
+        .button.menu-opened:after
+        {
+            -webkit-transition: all .3s ease;
+            -ms-transition: all .3s ease;
+            transition: all .3s ease;
+            top: 23px;
+            border: 0;
+            height: 2px;
+            width: 19px;
+            background: #fff;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .button.menu-opened:before
+        {
+            top: 23px;
+            background: #fff;
+            width: 19px;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+    #cssmenu .submenu-button
+    {
+        position: absolute;
+        z-index: 99;
+        right: 0;
+        top: 0;
+        display: block;
+        border-left: 1px solid #444;
+        height: 46px;
+        width: 46px;
+        cursor: pointer;
+    }
+
+        #cssmenu .submenu-button.submenu-opened
+        {
+            background: #262626;
+        }
+
+    #cssmenu ul ul .submenu-button
+    {
+        height: 34px;
+        width: 34px;
+    }
+
+    #cssmenu .submenu-button:after
+    {
+        position: absolute;
+        top: 22px;
+        right: 19px;
+        width: 8px;
+        height: 2px;
+        display: block;
+        background: #ddd;
+        content: '';
+    }
+
+    #cssmenu ul ul .submenu-button:after
+    {
+        top: 15px;
+        right: 13px;
+    }
+
+    #cssmenu .submenu-button.submenu-opened:after
+    {
+        background: #fff;
+    }
+
+    #cssmenu .submenu-button:before
+    {
+        position: absolute;
+        top: 19px;
+        right: 22px;
+        display: block;
+        width: 2px;
+        height: 8px;
+        background: #ddd;
+        content: '';
+    }
+
+    #cssmenu ul ul .submenu-button:before
+    {
+        top: 12px;
+        right: 16px;
+    }
+
+    #cssmenu .submenu-button.submenu-opened:before
+    {
+        display: none;
+    }
+
+    #cssmenu ul ul ul li.active a
+    {
+        border-left: none;
+    }
+
+    #cssmenu > ul > li.has-sub > ul > li.active > a, #cssmenu > ul ul > li.has-sub > ul > li.active > a
+    {
+        border-top: none;
+    }
+
+    .modal .modal-dialog
+    {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+        .modal .modal-dialog.modal-lg .modal-content
+        {
+            width: 100% !Important;
+        }
+
+        .modal .modal-dialog .modal-content
+        {
+            width: 100% !important;
+            margin: 30px auto;
+        }
+}
+
+
+/* ----------------------------- Menu Bar END ------------------------*/
+
+/*------------------------------ Table Start -------------------------*/
+
+#page-wrapper
+{
+    padding: 10px 10px;
+    min-height: calc(100vh - 140px);
+    background-color: #eee;
+}
+
+.inner-content
+{
+    background-color: #fff;
+    padding: 0px 20px !important;
+}
+/*Tables*/
+.table
+{
+    margin-bottom: 10px;
+}
+
+    .table-striped > tbody > tr:nth-of-type(odd),
+    .table-hover > tbody > tr:hover,
+    .table > thead > tr > td.active,
+    .table > tbody > tr > td.active,
+    .table > tfoot > tr > td.active,
+    .table > thead > tr > th.active,
+    .table > tbody > tr > th.active,
+    .table > tfoot > tr > th.active,
+    .table > thead > tr.active > td,
+    .table > tbody > tr.active > td,
+    .table > tfoot > tr.active > td,
+    .table > thead > tr.active > th,
+    .table > tbody > tr.active > th,
+    .table > tfoot > tr.active > th
+    {
+        background-color: #f4f8fb;
+    }
+
+    .table > thead > tr > th,
+    .table > tbody > tr > th,
+    .table > tfoot > tr > th,
+    .table > thead > tr > td,
+    .table > tbody > tr > td,
+    .table > tfoot > tr > td,
+    .table > thead > tr > th,
+    .table-bordered
+    {
+        border-top: 1px solid #f4f8fb;
+    }
+
+    .table > tbody > tr > td,
+    .table > tbody > tr > th,
+    .table > tfoot > tr > td,
+    .table > tfoot > tr > th,
+    .table > thead > tr > td,
+    .table > thead > tr > th
+    {
+        padding: 5px 8px;
+    }
+
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td
+{
+    border: 1px solid #f4f8fb;
+}
+
+.table > thead > tr > th
+{
+    vertical-align: bottom;
+    border-bottom: 2px solid #f4f8fb;
+}
+
+tbody
+{
+    color: #797979;
+}
+
+th
+{
+    color: #666666;
+    font-weight: 600;
+}
+
+.table-bordered#f4f8fb
+{
+    border: 1px solid #f4f8fb;
+    margin-right: 133px;
+}
+
+table.focus-on tbody tr.focused th
+{
+    background-color: #13dafe;
+    color: #ffffff;
+}
+
+table.focus-on tbody tr.focused td
+{
+    background-color: #13dafe;
+    color: #ffffff;
+}
+
+.table-rep-plugin .table-responsive
+{
+    border: none !important;
+}
+
+.table-rep-plugin tbody th
+{
+    font-size: 14px;
+    font-weight: normal;
+}
+/*Tables*/
+.table
+{
+    margin-bottom: 10px;
+    height: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+table
+{
+    height: auto !important;
+}
+
+.table tr td
+{
+    white-space: nowrap;
+}
+
+.table tr th
+{
+    text-align: center !important;
+}
+
+.table-page table
+{
+    width: auto !important;
+}
+
+    .table-page table tr td
+    {
+        padding: 5px 10px 5px 10px !important;
+    }
+/*.table > tbody > tr:first-child {background:#C6DAEA !important;}*/
+.table > tbody > tr:first-child
+{
+    background: #b3cde2 !important;
+}
+
+.rowhighlight
+{
+    background-color: #C2C2D6 !important;
+    font-weight: bold !important;
+}
+
+/*------------------------------ Table Start End -------------------------*/
+
+h4
+{
+    font-weight: bold;
+}
+
+.pannal h3
+{
+    left: 10px;
+}
+
+.modal-dialog
+{
+    padding-top: 20%;
+}
+
+.modal
+{
+    background: rgba(0, 0, 0, 0.6) !important;
+    overflow-y: auto;
+}
+
+.label-pad label
+{
+    padding-left: 9px;
+}
+
+.form-horizontal .control-label
+{
+    text-align: left;
+}
+
+.white-box
+{
+    margin-bottom: 8px !important;
+}
+
+.bg-title
+{
+    margin-bottom: 8px !important;
+}
+
+.container-fluid
+{
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+}
+
+.modal-header
+{
+    background-color: #4484CE;
+    text-align: center;
+}
+
+.modal-title, .close, .close:focus, .close:hover
+{
+    color: #fff;
+    opacity: 2.2;
+    font-weight: bold !important;
+}
+
+.modal .modal-dialog
+{
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+    .modal .modal-dialog .modal-content
+    {
+        width: 600px !important;
+        margin: 30px auto;
+    }
+
+    .modal .modal-dialog.modal-lg .modal-content
+    {
+        width: 1000px !important;
+        margin: 30px auto;
+    }
+
+#myModalInternalResource .modal-lg .modal-content, #divSearchInfo .modal-lg .modal-content
+{
+    width: 100% !important;
+    margin: 30px 0px !important;
+}
+
+
+
+.ajax__calendar
+{
+    z-index: 1000;
+    position: absolute;
+}
+
+.main-content.col-lg-1, .main-content.col-lg-10, .main-content.col-lg-11, .main-content.col-lg-12, .main-content.col-lg-2, .main-content.col-lg-3, .main-content.col-lg-4, .main-content.col-lg-5, .main-content.col-lg-6, .main-content.col-lg-7,
+.main-content.col-lg-8, .main-content.col-lg-9, .main-content.col-md-1, .main-content.col-md-10, .main-content.col-md-11, .main-content.col-md-12, .main-content.col-md-2, .main-content.col-md-3, .main-content.col-md-4, .main-content.col-md-5,
+.main-content.col-md-6, .main-content.col-md-7, .main-content.col-md-8, .main-content.col-md-9, .main-content.col-sm-1, .main-content.col-sm-10, .main-content.col-sm-11, .main-content.col-sm-12, .main-content.col-sm-2, .main-content.col-sm-3,
+.main-content.col-sm-4, .main-content.col-sm-5, .main-content.col-sm-6, .main-content.col-sm-7, .main-content.col-sm-8, .main-content.col-sm-9, .main-content.col-xs-1, .main-content.col-xs-10, .main-content.col-xs-11, .main-content.col-xs-12,
+.main-content.col-xs-2, .main-content.col-xs-3, .main-content.col-xs-4, .main-content.col-xs-5, .main-content.col-xs-6, .main-content.col-xs-7, .main-content.col-xs-8, .main-content.col-xs-9
+{
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.border
+{
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
+
+.content-header
+{
+    margin-bottom: 10px !important;
+}
+
+.form-control.date-readonly:read-only:focus
+{
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+}
+
+* [readonly].form-control:focus
+{
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+}
+
+select.form-control:focus
+{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+
+.img-content
+{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.aspNetDisabled
+{
+    /*background-color:#5bc0de;
+    border-color:#46b8da;*/
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.65;
+}
+/*
+.aspNetDisabled:hover {
+    background: #5bc0de !important;
+    border-color: #46b8da;
+    color: #fff;
+    opacity:0.65 !important;
+}*/
+.action-link a
+{
+    text-decoration: underline !important;
+    color: blue !important;
+}
+
+.form-group
+{
+    margin-bottom: 5px !important;
+}
+/*
+.control-label.col-lg-1, .control-label.col-lg-10, .control-label.col-lg-11, .control-label.col-lg-12, .control-label.col-lg-2, .control-label.col-lg-3, .control-label.col-lg-4, .control-label.col-lg-5, .control-label.col-lg-6, .control-label.col-lg-7, 
+.control-label.col-lg-8, .control-label.col-lg-9, .control-label.col-md-1, .control-label.col-md-10, .control-label.col-md-11, .control-label.col-md-12, .control-label.col-md-2, .control-label.col-md-3, .control-label.col-md-4, .control-label.col-md-5, 
+.control-label.col-md-6, .control-label.col-md-7, .control-label.col-md-8, .control-label.col-md-9, .control-label.col-sm-1, .control-label.col-sm-10, .control-label.col-sm-11, .control-label.col-sm-12, .control-label.col-sm-2, .control-label.col-sm-3, 
+.control-label.col-sm-4, .control-label.col-sm-5, .control-label.col-sm-6, .control-labelt.col-sm-7, .control-label.col-sm-8, .control-label.col-sm-9, .control-label.col-xs-1, .control-label.col-xs-10, .control-label.col-xs-11, .control-label.col-xs-12, 
+.control-label.col-xs-2, .control-label.col-xs-3, .control-label.col-xs-4, .control-label.col-xs-5, .control-label.col-xs-6, .control-label.col-xs-7, .control-label.col-xs-8, .control-label.col-xs-9 
+{
+    padding-left:5px !important;
+    padding-right:5px !important;
+}*/
+.btn
+{
+    line-height: 1.358571 !important;
+}
+
+.pannal
+{
+    padding: 20px 10px 3px 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: 0 0 1px rgba(0,0,0,0.1);
+    margin-right: 10px;
+}
+
+    .pannal h3
+    {
+        position: absolute;
+        top: -30px;
+        left: 40px;
+        background: #fff;
+        padding: 14px 10px;
+        font-size: 15px;
+    }
+
+.inline tr, .inline input[type=radio], .inline span
+{
+    display: inline;
+    padding-left: 30px;
+}
+
+    .inline tr td, .inline input[type=radio], .inline span
+    {
+        padding-top: 10px;
+    }
+
+.inline label, .inline span
+{
+    padding-right: 20px !important;
+}
+
+.min-width
+{
+    min-width: 101px !important;
+}
+
+.not-look
+{
+    /*background-color: #fff !important;
+    cursor:default !important;*/
+}
+
+.nowrap
+{
+    white-space: normal !important;
+}
+
+.error
+{
+    color: red;
+}
+
+.table > tbody > tr > td.colorred
+{
+    color: red !important;
+}
+
+.table > tbody > tr > td.colorblack
+{
+    color: #797979 !important;
+}
+
+.table > tbody > tr.colorPending > td
+{
+    color: red !important;
+}
+
+.radiobutton tr td
+{
+    width: 50%;
+}
+
+.messagealert
+{
+    /*width: 100%;*/
+    width: 99% !important;
+    position: fixed;
+    top: 0px;
+    z-index: 100000;
+    padding: 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.alert-danger
+{
+    color: #fff !important;
+    background-color: #C80000 !important;
+    border: 1px solid transparent !important;
+}
+
+.alert-info
+{
+    color: #fff !important;
+    background-color: #2c56e0 !important;
+    border: 1px solid transparent !important;
+}
+
+.alert-warning
+{
+    color: #fff !important;
+    background-color: #7c7551 !important;
+    border: 1px solid transparent !important;
+}
+
+.messagealert .close
+{
+    padding-left: 20px !important;
+}
+
+.messagealert span
+{
+    white-space: nowrap !important;
+}
+
+.form-control
+{
+    margin-bottom: 10px !important;
+}
+
+.bg-title-mobile
+{
+    display: none;
+    margin-bottom: 0px !important;
+    background-color: rgba(40, 70, 107, 1);
+    overflow: hidden;
+    padding: 15px 20px 10px;
+    margin-bottom: 20px;
+    min-height: 100px !important;
+    color: white;
+}
+
+.banner-label
+{
+    float: left;
+    word-wrap: break-word;
+    width: 225px;
+    text-align: center;
+}
+
+    .banner-label label
+    {
+        color: white;
+        font-size: 25px;
+        font-style: italic;
+    }
+
+.btn
+{
+    /*margin-bottom: 10px !important;*/
+    margin-bottom: 5px !important;
+    font-size: 13px !important;
+}
+
+.status-width
+{
+    width: 100px !important;
+}
+
+
+.select-left, .select-right
+{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.select-middle
+{
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    padding-right: 4px !important;
+    padding-left: 4px !important;
+}
+
+@media (min-width: 320px) and (max-width: 640px)
+{
+    .bg-title
+    {
+        display: none;
+    }
+
+    .bg-title-mobile
+    {
+        display: block;
+    }
+
+    #home
+    {
+        width: 100%;
+    }
+
+    .modal .modal-dialog
+    {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+        .modal .modal-dialog.modal-lg .modal-content
+        {
+            width: 100% !Important;
+        }
+
+        .modal .modal-dialog .modal-content
+        {
+            width: 100% !important;
+            margin: 30px auto;
+        }
+}
+
+@media (min-width: 320px) and (max-width: 980px)
+{
+    .border .btn:first-child
+    {
+        margin-left: 15px !important;
+    }
+}
+
+@media (min-width: 320px)
+{
+    .banner-label
+    {
+        width: 200px;
+    }
+
+    .banner-img
+    {
+        margin-top: 15px;
+    }
+}
+
+@media (min-width: 360px)
+{
+    .banner-label
+    {
+        width: 225px;
+        margin-top: 0px;
+    }
+
+    .banner-img
+    {
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 520px)
+{
+    .banner-label
+    {
+        width: 370px;
+        margin-top: 0px;
+        font-size: 25px;
+    }
+
+    .banner-img
+    {
+        margin-top: 0px;
+    }
+}
+
+
+/*New Changes*/
+.white-box
+{
+    padding-top: 0px !important;
+    margin-bottom: 10px !important;
+}
+
+.content-header
+{
+    margin-bottom: 0px !important;
+}
+
+.white-box h3
+{
+    margin-bottom: 0px !important;
+    font-weight: bold;
+}
+
+.content-header .right .btn
+{
+    margin-bottom: 0px !important;
+}
+
+.panel .panel-body
+{
+    padding-top: 5px !important;
+    padding-bottom: 1px !important;
+}
+
+.form-control
+{
+    margin-bottom: 5px !important;
+}
+
+.form-group
+{
+    margin-bottom: 5px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+}
+
+.panel
+{
+    margin-bottom: 0px !important;
+}
+
+    .panel h3
+    {
+        line-height: 30px !important;
+    }
+
+.last-pannal
+{
+    margin-bottom: 5px !important;
+}
+
+.clickable
+{
+    cursor: pointer;
+}
+
+.panel-heading span
+{
+    margin-top: -20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.panel-heading
+{
+    padding: 5px 15px !important;
+}
+
+.panel
+{
+    border-radius: 5px;
+    border: 1px solid transparent !important;
+}
+
+.panelCollapse h3
+{
+    line-height: 25px !important;
+    font-weight: 600;
+}
+
+.panelCollapse .panel-body
+{
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.panelCollapse
+{
+    border: 1px solid #ddd !important;
+}
+
+.panel-title
+{
+    font-size: 13px;
+}
+
+.td-fix-width
+{
+    max-width: 200px;
+    overflow: hidden;
+    font-weight: normal !important;
+}
+
+.td-fix-width-md
+{
+    max-width: 250px !important;
+    overflow: hidden;
+    font-weight: normal !important;
+}
+
+    .td-fix-width span, .td-fix-width-md span
+    {
+        font-weight: normal !important;
+    }
+
+@media (min-width: 992px)
+{
+    .modal-lg
+    {
+        width: 1000px;
+    }
+
+    #myCreated .modal-lg, #myModalReAssignRequisition .modal-lg, #myModalInternalResource .modal-lg, #divSearchInfo .modal-lg
+    {
+        width: 90% !important;
+    }
+}
+
+.inline tr, .inline input[type=radio], .inline span
+{
+    padding-left: 0px !important;
+}
+
+.modal-dialog
+{
+    padding-top: 8% !important;
+}
+
+.lg-model .modal-body
+{
+    padding: 0px !important;
+}
+
+.panelCollapse h3
+{
+    line-height: 20px !important;
+}
+
+.table > tbody > tr > th
+{
+    border: 1px solid #c5dbec !important;
+    background-color: #dfeffc;
+    font-weight: bold;
+    color: #2e6e9e;
+}
+
+.table-bordered > tbody > tr > td
+{
+    border: 1px solid #a6c9e2 !important;
+    color: #222222;
+}
+
+.table-page table tbody tr td span
+{
+    color: #222222;
+    font-weight: bold;
+}
+
+#myCreated .form-group, #myUpdated .form-group
+{
+    margin-bottom: 0px !important;
+}
+
+.bold
+{
+    font-weight: 600;
+}
+
+table.responsive-list
+{
+    margin-bottom: 0;
+}
+
+.list-pinned
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+    width: 28%;
+    overflow: hidden;
+    overflow-x: scroll;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+    .list-pinned table
+    {
+        border-right: none;
+        border-left: none;
+        width: 100%;
+    }
+
+        .list-pinned table th, .list-pinned table td
+        {
+            white-space: nowrap; /*! word-wrap: break-word; */
+        }
+
+    .list-pinned td:last-child
+    {
+        border-bottom: 0;
+    }
+
+div.table-list-wrapper
+{
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-right: 1px solid #ccc;
+}
+
+    div.table-list-wrapper div.scrollable
+    {
+        margin-left: 28%;
+        width: 53%;
+    }
+
+    div.table-list-wrapper div.scrollable
+    {
+        overflow: scroll;
+        overflow-y: hidden;
+    }
+
+table.responsive-list td, table.responsive-list th
+{
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+    table.responsive-list th:nth-child(2), table.responsive-list td:nth-child(2), table.responsive-list td:nth-child(2), table.responsive-list.list-pinned td
+    {
+        display: none;
+    }
+
+.multiselect-container
+{
+    width: 85%;
+}
+
+.btn-group
+{
+    width: 100%;
+}
+
+.multiselect
+{
+    width: 85%;
+}
+
+.btn.multiselect
+{
+    text-align: left;
+    overflow: hidden !important;
+}
+
+.btn-info
+{
+    color: #fff;
+    background-color: #4484CE !important;
+    border-color: #4484CE !important;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover
+{
+    color: #337ab7;
+}
+
+.navbar-default
+{
+    background-color: rgba(0, 187, 211, 1);
+}
+
+.panel-primary > .panel-heading
+{
+    /*color: #fff;*/
+    /*background-color: #4484CE;*/
+    background-color: #efefef;
+    color: #000;
+    border-color: #337ab7;
+    border-bottom: 0px solid transparent;
+}
+
+    .panel-primary > .panel-heading h3
+    {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+.collapse-panel
+{
+    display: none;
+}
+
+    .collapse-panel.active
+    {
+        display: block;
+    }
+
+.panel h3
+{
+    margin-top: 0px;
+}
+
+.optional-left-pannel
+{
+    margin-bottom: 10px;
+}
+
+    .optional-left-pannel .panel
+    {
+        border-color: #ccc !important;
+    }
+
+    .optional-left-pannel .panel-body
+    {
+        background-color: #efefef;
+    }
+
+.panel-coll-header
+{
+    font-weight: bold;
+    line-height: 25px;
+}
+
+    .panel-coll-header .active
+    {
+        background-color: #4484CE;
+        color: #000;
+    }
+
+    .panel-coll-header a
+    {
+        width: 100%;
+        display: block;
+    }
+
+    .panel-coll-header .active a
+    {
+        color: #fff;
+        width: 100%;
+    }
+
+        .panel-coll-header .active a:hover, .panel-coll-header .active a:active, .panel-coll-header .active a:focus,
+        .panel-coll-header a:hover, .panel-coll-header a:active, .panel-coll-header a:focus
+        {
+            text-decoration: none !important;
+        }
+
+.optional-left-pannel .panel .panel-body
+{
+    padding: 0px !important;
+}
+
+    .optional-left-pannel .panel .panel-body .panelHeader
+    {
+        padding: 5px 10px;
+    }
+
+.app-heading
+{
+    position: relative;
+    display: inline-block;
+    padding: 10px 40px;
+    overflow: hidden;
+    color: #4484CE;
+    height: 60px;
+    text-align: left;
+    font-size: 30px;
+}
+
+.inner-app-heading
+{
+    text-align: left;
+    font-size: 30px;
+    font-weight: 900;
+    padding: 5px 40px;
+}
+/*.app-heading:after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #000 !important;
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: skew(-45deg);
+  -ms-transform: skew(-45deg);
+  transform: skew(-45deg);
+  z-index: -1;
+}*/
+.user-profile
+{
+    height: 60px;
+    /*background:orange;*/
+    position: relative;
+    padding: 10px;
+}
+/*.user-profile:before {
+    content:"";
+    position:absolute;
+    top:0;
+    left: -100px;
+    width: 0; 
+    height: 0; 
+    border-top: 80px solid transparent; 
+    border-right: 100px solid orange; 
+}*/
+
+
+.app-heading a:hover
+{
+    color: #4484CE;
+    text-decoration: none;
+}
+
+.welcomemsg
+{
+    font-weight: 800;
+    margin-right: 20px;
+    margin-top: 3px;
+    padding: 8px;
+    float: right;
+    color: #fff;
+    font-size: 13px;
+}
+
+    .welcomemsg a
+    {
+        padding-left: 30px;
+        color: #000;
+    }
+
+        .welcomemsg a:hover
+        {
+            text-decoration: none;
+            color: #000;
+        }
+
+.h4, h4
+{
+    font-size: 15px !important;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+label, .form-control
+{
+    font-size: 12px;
+}
+
+.pannal h3
+{
+    font-size: 13px;
+}
+
+.pannal
+{
+    margin-bottom: 5px !important;
+}
+
+    .pannal.pannal-mar
+    {
+        margin-bottom: 30px !important;
+    }
+
+.table > tbody > tr > th, .table-bordered > tbody > tr > td
+{
+    font-size: 11px;
+}
+
+.table-hmax
+{
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+table tr td a
+{
+    color: #4484CE;
+    font-weight: bold;
+}
+
+.right-content
+{
+    padding-right: 15px;
+    padding-top: 10px;
+}
+
+.white-box
+{
+    padding-top: 0px !important;
+}
+
+table tr td a.btn
+{
+    margin-bottom: 0px !important;
+    line-height: 1.0 !important;
+    padding: 5px 7px;
+}
+
+.no-mar .btn
+{
+    margin-bottom: 0px !important;
+}
+
+.date-readonly
+{
+    background-color: transparent !important;
+    cursor: default !important;
+}
+
+.grid-date
+{
+    width: 90px !important;
+}
+
+.panelCollapse
+{
+    margin-bottom: 5px !important;
+}
+/*SELECT2 Jquery CSS*/
+/*.select2-container--default .select2-selection--single .select2-selection__rendered
+{
+    color:#555 !important;
+    line-height:26px  !important;
+}
+.select2-container--default .select2-selection--single
+{
+    border: 1px solid #ccc !important;
+}
+span.select2 select2-container select2-container--default
+{
+    width:81% !important;
+}
+.select2-results__message
+{
+    font-weight: bold;
+}
+.select2-search__field
+{
+    border: 1px solid #3368a5 !important;
+    border-style: groove;
+    box-shadow: inset 0px 11px 5px -10px #3368a5;
+    background: url(../Images/select2.png) no-repeat 100% -22px;
+}*/
+
+/*Bootstarp searchdropdown CSS*/
+.bootstrap-select.btn-group[class*=col-] .dropdown-toggle
+{
+    /*width: 83% !important;*/
+}
+
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn
+{
+    opacity: 1 !important;
+}
+
+.bootstrap-select.btn-group.disabled, .bootstrap-select.btn-group > .disabled
+{
+    opacity: 0.80 !important;
+    /*width:83% !important;*/
+}
+
+.bootstrap-select.btn-group .dropdown-menu
+{
+    min-width: 100% !important;
+}
+
+.bs-searchbox .form-control
+{
+    border: 1px solid #3368a5 !important;
+    box-shadow: inset 0px 11px 5px -10px #3368a5;
+}
+
+.dropdown-menu
+{
+    top: 75% !important;
+    font-size: 12px !important;
+}
+
+.bootstrap-select.btn-group .no-results
+{
+    font-weight: bold;
+}
+
+/*.bootstrap-select.btn-group .dropdown-menu.inner
+{
+    overflow: auto !important;
+}*/
+/*.dropdown-menu.open
+{
+    overflow:hidden !important;
+    height:300px !important;
+}
+dropdown-menu.inner {
+    overflow:auto !important;
+}*/
+.bootstrap-select.btn-group .dropdown-menu li a span.text
+{
+    white-space: normal !important;
+}
+
+.btn_img
+{
+    border-radius: 4px;
+    border: 1px solid transparent;
+    vertical-align: middle;
+    margin-bottom: 6px;
+    cursor: pointer;
+    width: 39px;
+    height: 33px;
+}
+
+.bootstrap-select.btn-group.disabled, .bootstrap-select.btn-group > .disabled
+{
+    cursor: not-allowed;
+    /*width:83% !important;*/
+    background-color:#eee !important;
+}
+.bootstrap-select.btn-group.disabled, .bootstrap-select.btn-group > .disabled
+{
+
+}
+.btn-group
+{
+    width:83% !important;
+}
+.subclass
+{
+    color: #000;
+    position: absolute;
+    margin-top: -20px;
+    font-weight: bold;
+    font-size: 10px;
+    padding-left: 80%;
+    width: 100%;
+    float: right;
+    /*right: 0;*/
+}
+
+ .tabcontent
+        {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .tab button
+        {
+            background-color: inherit;
+            float: left;
+            /*border: none;*/
+            outline: none;
+            cursor: pointer;
+            padding: 4px 19px;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .tab
+        {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tablinks.active
+        {
+            background-color: #31708f;
+            color: white;
+        }
+
+        .tab button:hover
+        {
+            background-color: #97b8db;
+        }
+@media screen and (min-width: 320px) and (max-width: 480px)
+{
+
+    .navbar
+    {
+        height: 150px !important;
+    }
+
+    .navbar-nav
+    {
+        margin: 7.5px 0px;
+    }
+
+        .navbar-nav > li
+        {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+            .navbar-nav > li > a
+            {
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+
+    .app-heading:after
+    {
+        transform: none !important;
+    }
+
+    #page-wrapper
+    {
+        min-height: calc(100vh - 250px);
+    }
+
+    .optional-left-pannel
+    {
+        margin-bottom: 30px !important;
+    }
+
+    .sub-header
+    {
+        height: auto !important;
+    }
+
+    .modal .modal-dialog
+    {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+        .modal .modal-dialog.modal-lg .modal-content
+        {
+            width: 100% !Important;
+        }
+
+        .modal .modal-dialog .modal-content
+        {
+            width: 100% !important;
+            margin: 30px auto;
+        }
+}
+
+
+
+@media screen and (min-width:360px) and (max-width:768px)
+{
+    .navbar
+    {
+        height: 150px !important;
+    }
+
+    .navbar-nav
+    {
+        margin: 7.5px 0px;
+    }
+
+        .navbar-nav > li
+        {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+            .navbar-nav > li > a
+            {
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+
+    .app-heading:after
+    {
+        transform: none !important;
+    }
+
+    #page-wrapper
+    {
+        min-height: calc(100vh - 250px);
+    }
+
+    .optional-left-pannel
+    {
+        margin-bottom: 30px !important;
+    }
+
+    .sub-header
+    {
+        height: auto !important;
+    }
+
+    .modal .modal-dialog
+    {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+        .modal .modal-dialog.modal-lg .modal-content
+        {
+            width: 100% !Important;
+        }
+
+        .modal .modal-dialog .modal-content
+        {
+            width: 100% !important;
+            margin: 30px auto;
+        }
+}

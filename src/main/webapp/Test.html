@@ -1,0 +1,82 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page session="false"%>
+<%@ page isELIgnored="false"%>
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Select Controller</title>
+<meta charset="ISO-8859-1">
+<title>Internal Job Posting</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<div class="controller">
+		<div class="col-sm-2 col-md-2 col-lg-2"></div>
+		<div class="col-sm-8 col-md-8 col-lg-8"
+			style="box-shadow: 10px 10px 5px #888888; padding: 10px;">
+			<h2 style="color: #337ab7; text-align: center;">
+				List of Candidates Applied
+
+				<form style="float:right;">
+					<a href="<c:url value='/6,7,${list[2]}'/>">&times;</a>
+					<!--  <button type="button" class="close" data-dismiss="modal" >&times;</button> -->
+				</form>
+			</h2>
+
+			<form>
+				<c:choose>
+
+					<c:when test="${not empty listEmployees}">
+						<div class="panel">
+
+							<c:forEach var="employee9" items="${listEmployees}">
+
+
+								<ul class="list-group col-sm-12 col-md-12 col-lg-12">
+									<li class="list-group-item"><div class="checkbox">
+									<!-- style="font-familyAvenir", Verdana, sans-serif; -->
+										
+												<label><input type="checkbox" value="">Name: ${employee9.name}&nbsp;&nbsp;&nbsp;&nbsp;PS No:${employee9.psNo}&nbsp;&nbsp;&nbsp;&nbsp;Mobile No:${employee9.mobileno}</label>
+										
+										</div></li>
+								</ul>
+
+
+
+							</c:forEach>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<h2 style="text-align: center;">No Applicants</h2>
+					</c:otherwise>
+				</c:choose>
+				<c:choose>
+
+					<c:when test="${not empty listEmployees}">
+
+						<a class="btn btn-primary" style="float: right; margin: 10px;">Save</a>
+						<a class="btn btn-primary" style="float: right; margin: 10px;"
+							href="<c:url value='/5,${id},${list[2]}'/>">Close the job</a>
+					</c:when>
+
+				</c:choose>
+				<a class="btn btn-primary" style="float: right; margin: 10px;"
+					href="<c:url value='/7,${id},${list[2]}'/>">Cancel The Job</a>
+
+			</form>
+		</div>
+		<div class="col-sm-2 col-md-2 col-lg-2"></div>
+	</div>
+</body>
+</html>

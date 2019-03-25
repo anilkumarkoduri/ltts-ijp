@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+ <script src="js/Jobs.js"></script>
+ <script src="js/tableHeadFixer.js"></script>
+<script src="js/jquery.twbsPagination.js"></script>
+<script>
+	function FunctionFor(){
+			sessionStorage.clear();
+	}
+	contextPath=sessionStorage.getItem("contextPath");
+	user=sessionStorage.getItem("user");
+	name=sessionStorage.getItem("name");
+	role=sessionStorage.getItem("role");
+	roleId=sessionStorage.getItem("roleId");
+	psNO=sessionStorage.getItem("psNO");
+	email=sessionStorage.getItem("email");
+	currentBu=sessionStorage.getItem("currentBu");
+	isPsNo=sessionStorage.getItem("isPsNo");
+	baselocation=sessionStorage.getItem("baselocation");
+	
+	if(contextPath==null){
+		location.href = 'Login.html';
+	}
+	/* function gidpr(a_id) {
+		return document.getElementById(a_id);
+
+	}
+
+	function close_alljobs() {
+
+		for (i = 0; i < 999; i++) {
+			var o = gidpr("myJobs_" + i);
+			if (o) {
+				o.style.display = "none";
+			}
+		}
+
+	}
+
+	function find_my_divJobs() {
+		find_my_divJobs1();
+		var check = document.getElementById("searchJobs").value;
+		if (check == "") {
+
+		} else {
+
+			close_alljobs();
+			var o_edit = gidpr("searchJobs");
+			var str_needle = searchJobs.value;
+			str_needle = str_needle.toUpperCase();
+
+			if (str_needle != "") {
+				for (i = 0; i < 999; i++) {
+					var o = gidpr("myJobs_" + i);
+					/* var p = gid("myPanel_" + i); 
+					if (o) {
+
+						var str_haystack = o.innerHTML.toUpperCase();
+						if (str_haystack.indexOf(str_needle) == -1) {
+							// not found, do nothing
+						} else {
+							o.style.display = "block";
+							/* p.style.display = "block"; 	
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	
+	function gidpr1(a_id) {
+		return document.getElementById(a_id);
+
+	}
+
+	function close_alljobs1() {
+
+		for (i = 0; i < 999; i++) {
+			var o = gidpr1("appliedJobsByCandidates_" + i);
+			if (o) {
+				o.style.display = "none";
+			}
+		}
+
+	}
+
+	function find_my_divJobs1() {
+
+		var check = document.getElementById("searchJobs").value;
+		if (check == "") {
+
+		} else {
+
+			close_alljobs1();
+			var o_edit = gidpr1("searchJobs");
+			var str_needle = searchJobs.value;
+			str_needle = str_needle.toUpperCase();
+
+			if (str_needle != "") {
+				for (i = 0; i < 999; i++) {
+					var o = gidpr1("appliedJobsByCandidates_" + i);
+					/* var p = gid("myPanel_" + i); 
+					if (o) {
+
+						var str_haystack = o.innerHTML.toUpperCase();
+						if (str_haystack.indexOf(str_needle) == -1) {
+							// not found, do nothing
+						} else {
+							o.style.display = "block";
+							/* p.style.display = "block"; 		
+						}
+					}
+				}
+			}
+		}
+	}
+	document.querySelector('#searchJobs').addEventListener('keyup', find_my_divJobs1, false);
+	
+	
+	function gidpr2(a_id) {
+		return document.getElementById(a_id);
+
+	}
+
+	function close_alljobs2() {
+
+		for (i = 0; i < 999; i++) {
+			var o = gidpr1("appliedJobs_" + i);
+			if (o) {
+				o.style.display = "none";
+			}
+		}
+
+	} 
+
+	/* function find_my_divJobs2() {
+
+		var check = document.getElementById("searchJobs").value;
+		if (check == "") {
+
+		} else {
+
+			close_alljobs2();
+			var o_edit = gidpr2("searchJobs");
+			var str_needle = searchJobs.value;
+			str_needle = str_needle.toUpperCase();
+
+			if (str_needle != "") {
+				for (i = 0; i < 999; i++) {
+					var o = gidpr2("appliedJobs_" + i);
+					/* var p = gid("myPanel_" + i); 
+					if (o) {
+
+						var str_haystack = o.innerHTML.toUpperCase();
+						if (str_haystack.indexOf(str_needle) == -1) {
+							// not found, do nothing
+						} else {
+							o.style.display = "block";
+							/* p.style.display = "block"; 		
+						}
+					}
+				}
+			}
+		}
+	}
+	document.querySelector('#searchJobs').addEventListener('keyup', find_my_divJobs2, false); */
+</script>
+
+<title>IJP</title>
+<style>
+.middle {
+	padding: 0px 30px 30px 30px;
+}
+
+.matter {
+	background-color: white;
+}
+
+.log {
+	BACKGROUND-COLOR: #eee;
+	PADDING: 44PX;
+}
+
+#searchclear {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    bottom: 0;
+    height: 14px;
+    margin: auto;
+    font-size: 14px;
+    cursor: pointer;
+    color: #ccc;
+}
+#searchJobs{
+    border-radius: 0px !important;
+}
+button.accordion {
+	color: black;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+	transition: 0.4s;
+	background-color: white;
+}
+
+button.accordion:hover {
+	background-color: #337ab7;
+}
+
+button.accordion.active:nth-child(odd) {
+	background-color: rgba(0, 0, 0, .25);
+}
+
+div.panel {
+	padding: 0 18px;
+	background-color: white;
+	max-height: 0;
+	overflow-y: scroll;
+	transition: max-height 0.2s ease-out;
+}
+
+.panelForJob{
+padding: 9px; 
+border:1px solid lightgray;
+}
+.main {
+	padding: 26px;
+	background-color: #f5f5f5;
+}
+.body{
+font-family:calibri;
+}
+
+.box {
+	padding: 10px;
+}
+
+#modal_headerId
+{
+    background-color: rgb(0, 63, 118);
+    color: #000;
+    font-size: 30px;
+    font-family: Tahoma, sans-serif;
+}
+#Modal_closeButton
+{
+	opacity: 1;
+	color:white;
+    font-size: 22px;
+}
+
+button{
+    border-top: 2px solid #dddddd;
+    border-bottom: 2px solid #dddddd;
+}
+table thead tr th{
+text-align: center !important;
+background-color: rgba(0, 63, 118, 1);
+    color: white;
+}
+#applicantsList tr{
+background: #b3cde2 !important;
+}
+#applicantsList tr td{
+text-align: center !important;
+}
+#applicantsListForAdmin tr{
+background: #b3cde2 !important;
+}
+#applicantsListForAdmin tr td{
+text-align: center !important;
+}
+#modalEmail{
+    white-space: nowrap; 
+    width: 180px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    }
+    #modalEmailForAppliedJobs
+    {
+    white-space: nowrap; 
+    width: 180px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+    #h4BoldID{
+    font-weight:600;
+    color:white;
+    }
+   #statusFormadal
+   {
+   color:#1b52ce;
+   }
+</style>
+<script>
+	$(document).ready(function() {
+		$('.group').hide();
+		$('#option1').show();
+		$('#selectMe').change(function() {
+			$('.group').hide();
+			$('#' + $(this).val()).show();
+		})
+
+	});
+</script>
+</head>
+<body style="font-family: calibri;">
+	<div class="container">
+		<div class="row">
+			
+			<!-- <div class="col-sm-10 col-md-10 col-lg-10 main">
+				<header>
+					<img src="Images/logo.png" style="width: 25%;"> <a
+						href="Login.html" style="float: right" onClick="FunctionFor();">LOGOUT</a>
+
+				</header>
+				<hr style="border-top: 1px solid #ccc">
+				<div class="upper">
+					<div class="row">
+						<div class="col-sm-3 col-md-3 col-lg-3">
+							<img src="Images/Goals.jpg" width="100%">
+
+						</div>
+						<div class="col-sm-9 col-md-9 col-lg-9 box"
+							style="background-color: lightgray;">
+
+							<form class="form-horizontal">
+
+								<div class="form-group">
+									<b class=" col-sm-12 " style="text-align: left;">Details :</b>
+								</div>
+								<div class="form-group">
+									<b class=" col-sm-2 col-md-2 col-lg-2"
+										style="text-align: right;">Name : </b>
+									<div class="col-sm-10 col-md-10 col-lg-10">
+										<span class=" col-sm-12 " style="text-align: left;"
+											id="getname"></span>
+									</div>
+								</div>
+								<div class="form-group">
+
+									<b class=" col-sm-2 col-md-2 col-lg-2"
+										style="text-align: right;">Role : </b>
+									<div class="col-sm-10 col-md-10 col-lg-10">
+										<span class=" col-sm-12 " style="text-align: left;"
+											id="getrole"></span>
+									</div>
+
+								</div>
+
+
+							</form>
+
+
+						</div>
+					</div>
+				</div>
+				<hr style="border-top: 1px solid #ccc">
+				<div class="nav nav-pills"
+					style="background-color: lightgrey; margin-bottom: 15px; padding: 10px; color: #337ab7;">
+					<h5>
+						<b> Select Activity to Perform</b>
+					</h5>
+
+					<a class="btn btn-primary" data-toggle="pill" href="#home" id="viewId"
+						style="margin: 20px;" onClick="loadActiveJobs();">View Jobs</a>
+						 <a class="btn btn-primary"
+						data-toggle="pill" href="#Appliedjob" style="margin: 20px;" onClick="loadAppliedJobs();">Applied
+						Jobs</a><a class="btn btn-primary"
+						data-toggle="pill" href="#Applicant" style="margin: 20px;" id="applicantTab" onClick="loadAppliedJobsByCandidates();">Applicants
+						</a>
+					<div class="input-group add-on btn-group"
+						style="float: right; margin-top: 25px;">
+						<input class="form-control" type="text" id="searchJobs"
+							onkeyup="find_my_divJobs();" placeholder="Search Jobs"
+							style="z-index: 0; width: 100%; border-radius: 5px;">
+									<span id="searchclear" class="glyphicon glyphicon-remove-circle" onclick="clearSearch();"></span>
+													
+					</div>
+
+
+
+
+					
+							<a class="btn btn-primary" data-toggle="pill" href="#menu1"
+								style="margin: 20px;">Post Jobs</a>
+							<a class="btn btn-primary" data-toggle="pill" href="#menu2"
+								style="margin: 20px;">My Jobs</a>
+
+
+					
+
+					
+
+
+							<div class="btn-group">
+								<a class="btn btn-primary dropdown-toggle"
+									data-toggle="dropdown" href="#">Approvals <span
+									class="caret"></span></a>
+								<div class="dropdown-menu">
+									<a style="padding: 10px;" data-toggle="pill" href="#menu3">Approve
+										Jobs</a> <a style="padding: 10px;" data-toggle="pill"
+										href="#menu4">Approve Closure</a> <a style="padding: 10px;"
+										data-toggle="pill" href="#menu5">Approve Cancellation</a>
+								</div>
+								end of dropdown menu
+							</div>
+							<a class="btn btn-primary" data-toggle="pill" href="#menu1"
+								style="margin: 20px;">Post Jobs</a>
+							<a class="btn btn-primary" data-toggle="pill" href="#menu2"
+								style="margin: 20px;">My Jobs</a>
+
+
+
+				</div>
+				<div class="content" style="overflow-x: hidden; height: 425px;"> 
+				<div class="tab-content">
+					
+					
+							<div id="home" class="tab-pane fade in active">
+
+								 <div id="getIjps">
+
+								</div>
+
+					
+
+								
+							</div>
+							<div id="Appliedjob" class="tab-pane fade">
+								<div id="getApplicantIjps">
+
+								</div> 
+							</div>
+							<div id="Applicant" class="tab-pane fade">
+								<div id="getApplicantApplied">
+
+								</div> 
+							</div>
+								<div class="modal fade" id="myModal" role="dialog">
+									<div class="modal-dialog modal-lg">
+
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<img src="Images/ijp.jpg" alt="logo" width="100%">
+											</div>
+											<div class="modal-body">
+												<form>
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #28ace3; padding: 7px; text-align: center; color: white;">Title/Position</span>
+															</div>
+															<div class="col-sm-8 col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="activeJobTitle"></span>
+															</div>
+														</div>
+													</div>
+
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #0a4680; padding: 7px; text-align: center; color: white;">Job
+																	Description</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="ActiveJobSDesc"></span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #28ace3; padding: 7px; text-align: center; color: white;">Skills</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<textarea
+																	class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="ActiveJobsSkills">
+																													</textarea>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #0a4680; padding: 7px; text-align: center; color: white;">Domain</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="ActiveJobsDomain"></span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #28ace3; padding: 7px; text-align: center; color: white;">
+																	Qualification</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="ActiveJobsQualification"></span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #0a4680; padding: 7px; text-align: center; color: white;">Years
+																	of Experience</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="ActiveJobsExperince"></span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #28ace3; padding: 7px; text-align: center; color: white;">Work
+																	Location/Country</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="ActiveJobsLocation"></span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #0a4680; padding: 7px; text-align: center; color: white;">Duration
+																	(In months)</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="ActiveJobsDuration"></span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #28ace3; padding: 7px; text-align: center; color: white;">Visa</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;">Authorized
+																	to work in the country</span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #0a4680; padding: 7px; text-align: center; color: white;">Number
+																	of Positions</span>
+															</div>
+															<div class="col-sm-2 col-lg-2 col-md-2 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #0a4680; padding: 7px; text-align: center; color: white;">Initial</span>
+															</div>
+															<div class="col-sm-2 col-lg-2 col-md-2">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="initialReq"></span>
+															</div>
+															<div class="col-sm-2 col-lg-2 col-md-2">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #0a4680; padding: 7px; text-align: center; color: white;">Revised</span>
+															</div>
+															<div class="col-sm-2 col-lg-2 col-md-2">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="revisedReq"></span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #28ace3; padding: 7px; text-align: center; color: white;">Expected
+																	Fulfillment Date</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="ActiveJobsExpectedFullDate"></span>
+															</div>
+														</div>
+													</div>
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-12 col-md-12 col-lg-12"
+																style="background-color: #fcc110; height: 50px; padding: 10px; color: green;">
+																<span class=" col-sm-4 col-md-4 col-lg-4">Point
+																	Of Contact</span> <span class=" col-sm-8 col-md-8 col-lg-8">NA</span>
+															</div>
+														</div>
+													</div>
+												</form>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default"
+													data-dismiss="modal">Close</button>
+
+												<button type="button" class="btn btn-default"
+													data-toggle="modal" data-target="#applyJobModal" data-backdrop="static"
+													style="overflow: hidden;" onclick="clearFields();" id="ButtonIdToApply">Click Here to Apply</button>
+
+											</div>
+										</div>
+
+
+
+
+									</div>
+
+								</div>
+						
+					
+					
+					<div class="modal fade" id="applyJobModal" role="dialog">
+									<div class="modal-dialog modal-md">
+										<div class="modal-content" style="margin-top:30%;">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Apply Job</h4>
+											</div>
+											<div class="modal-body">
+												<form class="form-horizontal" id="UploadResumeForm" autocomplete="off" onsubmit="return false;">
+
+													<div class="form-group">
+														<span class="control-span col-sm-2">JobID:</span>
+														<div class="col-sm-10">
+															<input type="text" class="form-control"
+																 id="jobID"
+																name="jobID" required readonly>
+														</div>
+													</div>
+
+
+													<div class="form-group">
+														<span class="control-span col-sm-2">PS No:</span>
+														<div class="col-sm-10">
+															<input type="text" class="form-control" id="psNo"
+																 name="psNo" readonly>
+
+														</div>
+													</div>
+													<div class="form-group">
+														<span class="control-span col-sm-2">Name:</span>
+														<div class="col-sm-10">
+															<input type="text" class="form-control" id="name"
+																name="name" value="${list[1]}" required readonly>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<span class="control-span col-sm-2"><span style="color:red;">*</span>Mobile No:</span>
+														<div class="col-sm-10">
+															<input type="text" class="form-control" id="mobile"
+																name="mobileno" required pattern="[0-9]{10}"
+																placeholder="Enter 10 Digit Mobile Number" required>
+
+														</div>
+													</div>
+													<div class="form-group">
+														<span class="control-span col-sm-2"><span style="color:red;">*</span>Resume:</span>
+														<div class="col-sm-10">
+															<input type="file" name="resume" id="UploadResume" required>
+
+														</div>
+													</div>
+													<a href="Images/LTTechServices_Name_PS No.docx" download>Click
+														here to download Standard Format</a> 
+														<div class="modal-footer">
+														<input type="submit"
+														value="Apply" onclick="getResumePath();"class="btn btn-primary" style="float: right">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal"
+														style="float: right; margin-right: 5px;">Close</button>
+														</div>
+
+												</form>
+											</div>
+
+										</div>
+									</div>
+								</div>
+									
+					
+						<div class="modal fade" id="myModelAlert" role="dialog" >
+									<div class="modal-dialog modal-sm" style="top:30%;">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Alert</h4>
+											</div>
+											<div class="modal-body">
+												<h4 id="getSuccessMessage"></h4>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+											</div>
+										</div>
+									</div>
+								</div>
+						
+						<div class="modal fade" id="myModalApplicant" role="dialog">
+						    <div class="modal-dialog modal-lg">
+						      <div class="modal-content">
+						        <div class="modal-header" id="modal_headerId">
+						          <button type="button" class="close" data-dismiss="modal" id="Modal_closeButton">&times;</button>
+						          <h4 class="modal-title">Applicants</h4>
+						        </div>
+						        <div class="modal-body" style="height: 450px;">
+										<table class="table table-bordered" id="applicantTableId">
+											<thead>
+												<tr>
+													<th>PS Number</th>
+													<th>Name</th>
+													<th>Contact Details</th>
+													<th>Resume</th>
+													<th>Select</th>
+													<th>Reject</th>
+												</tr>
+											</thead>
+											<tbody id="applicantsList">
+
+											</tbody>
+										</table>
+									</div>
+						        <div class="modal-footer">
+						         <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+						         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        </div>
+						      </div>
+						    </div>
+						  </div>
+					
+				</div>
+				</div>
+			</div> -->
+			<div class="col-sm-12 col-md-12 col-lg-12 main">
+				<header>
+					<a	href="Login.html" style="float: right" 	onClick="FunctionFor();">Logout</a>
+					<p style="float: right;margin-right: 10px">Role : <b id="getrole"></b> </p>
+					<p style="float: right;margin-right: 10px">Welcome <b id="welcomeName"></b> </p>
+					
+		
+		<div class="col-sm-12 col-md-12 col-lg-12" style='background-color: rgba(0, 63, 118, 1);padding:2%;' align="center">
+		<b style='font-size: 21px; color: white;'>IJP PORTAL BANNER</b>
+		</div>
+		
+				</header>
+				<div class="row"></div>
+				
+				<div class="upper">
+								
+						<div class="col-sm-12 col-md-12 col-lg-12 box"
+							style="border: 1px solid lightgray;">
+
+							<form class="form-horizontal">
+
+								
+								
+								<div class="col-sm-12 col-md-12 col-lg-12" style="background: #b3cde2 !important;padding: 5px;margin-bottom:5px;margin-bottom:5px;">
+								<b style="text-align: left;">Employee Details :</b>
+								</div>
+							
+									
+									
+								<div >
+								<div class="form-group">
+								<div class="col-sm-3 col-md-3 col-lg-3">
+								<b class=" col-sm-12 " style="text-align: left;">Employee PS Number : </b>	
+								</div>
+									
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span id="getPsNo" class=" col-sm-12 " style="text-align: left;"></span>
+									</div>
+									<div class="col-sm-3 col-md-3 col-lg-3">
+									<b class=" col-sm-12 " style="text-align: left;">Employee Name : </b>	
+									</div>
+									
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;" id="getname"></span>
+									</div>
+								</div>
+								<div class="form-group">
+								<div class="col-sm-3 col-md-3 col-lg-3">
+								<b class=" col-sm-12 " style="text-align: left;">Current Location : </b>	
+								</div>
+									
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;" id="getCurrentLocation"></span>
+									</div>
+									<div class="col-sm-3 col-md-3 col-lg-3">
+									<b class=" col-sm-12 " style="text-align: left;">Current BU : </b>	
+									</div>
+									
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;" id="getCurrentBu"></span>
+									</div>
+								</div>
+								<div class="form-group">
+							
+									<div class="col-sm-3 col-md-3 col-lg-3">
+									<b class=" col-sm-12 " style="text-align: left;" >IS PS Number : </b>
+									</div>
+									
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;" id="getIsPsNumber"></span>
+									</div>
+									<div class="col-sm-3 col-md-3 col-lg-3">
+									<b class=" col-sm-12 " style="text-align: left;">Employee Email : </b>
+									</div>
+									
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;" id="getEmail"></span>
+									</div>
+								</div>
+								<!-- <div class="form-group">
+								<div class="col-sm-3 col-md-3 col-lg-3">
+								<b class=" col-sm-12 " style="text-align: left;">Role : </b>	
+								</div>
+									
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;"
+											id="getrole"></span>
+									</div>
+
+								</div> -->
+								</div>
+
+
+							</form>
+
+
+						</div>
+					
+				</div>
+				<div class="row" style=" padding: 5px;"></div>
+				
+				<div style=" border: 1px solid lightgray;" >
+				<div class="nav nav-pills"
+					style="margin-bottom: 15px; padding: 10px; color: #337ab7;">
+					<!-- <h5>
+						<b style="text-decoration: underline"> Select Activity to Perform</b>
+					</h5> -->
+				 	<ul class="nav nav-tabs" id='mainTabForIjp'>
+				    <!-- <li class="active">
+				    <a  data-toggle="tab" href="#home" id="viewId" onClick="loadActiveJobs();">View Jobs</a></li>
+				    <li ><a data-toggle="tab" href="#Appliedjob"  onClick="loadAppliedJobs();">Applied Jobs</a> </li>
+				    <li ><a data-toggle="tab" href="#Applicant"  id="applicantTab" onClick="loadAppliedJobsByCandidates();">Applicants</a> </li>
+    
+					
+					<li style="float: right;"> 
+					<div >
+						
+						<input class="form-control" type="text" id="searchJobs"
+							placeholder="Search Jobs"
+							style=" width: 100%;">
+									<span id="searchclear" class="glyphicon glyphicon-remove-circle" onclick="clearSearch();"></span>
+													
+					</div></li> -->
+					</ul>
+				</div>
+				<div class="content"> 
+				<div class="tab-content">
+					
+					
+							<div id="home" class="tab-pane fade in active" >
+							<div style="overflow-x: hidden; height: 425px; overflow-y: scroll;">
+									<table class="table table-bordered" id="viewjobsTableId">
+									<thead>
+										<tr>
+											<th>JOB ID</th>
+											<th>IJP NAME</th>							
+											<th>DELIVERY UNIT</th>
+											<th>WORK LOCATION</th>
+											<th>YRS OF EXP</th>		
+											<th>LAST DATE TO APPLY</th>
+											<th>STATUS</th>				
+										</tr>
+									</thead>
+									<tbody id="getIjps">
+									</tbody>		
+								</table>
+								</div>
+								<div style="padding:5px">
+										<ul class="pagination" id="viewjobs" style=float:right;>
+										 </ul>
+								</div> 
+								
+							</div>
+							<div id="Appliedjob" class="tab-pane fade">
+							<div   style="overflow-x: hidden; height: 425px; overflow-y: scroll;">
+							<table class="table table-bordered" id='appliedjobsTableId' >
+									<thead>
+										<tr>
+											<th>JOB ID</th>
+											<th>IJP NAME</th>							
+											<th>DELIVERY UNIT</th>
+											<th>WORK LOCATION</th>
+											<th>YRS OF EXP</th>		
+											<th>LAST DATE TO APPLY</th>
+											<th>STATUS</th>				
+										</tr>
+									</thead>
+									<tbody id="getApplicantIjps">
+									</tbody>		
+								</table>
+							</div>
+								<div style="padding:5px">
+										<ul class="pagination" id="appliedJobs" style=float:right;>
+										 </ul>
+								</div>							 
+							</div>
+							
+							<div id="relevantjobsTab" class="tab-pane fade">
+							<div class="row">
+							<div class="col-sm-12">
+								<span class='col-sm-9'><b>Your skills as per to skill matrix: </b><span id='skillsForLogedInUser'></span></span>
+								<span class='col-sm-3'><a href="https://skillmatrix.lnttechservices.com:8080" target="_blank" style="float:right">Click here to update your skills</a></span>
+							</div>
+							<br/>
+							<div class="col-sm-12" style="overflow-x: hidden; height: 425px; overflow-y: scroll;">
+								<table class="table table-bordered" id='relevantjobsTableId' >
+										<thead>
+											<tr>
+												<th>JOB ID</th>
+												<th>IJP NAME</th>							
+												<th>DELIVERY UNIT</th>
+												<th>WORK LOCATION</th>
+												<th>YRS OF EXP</th>		
+												<th>LAST DATE TO APPLY</th>
+												<th>STATUS</th>				
+											</tr>
+										</thead>
+										<tbody id="getrelevantjobsIjps">
+										</tbody>		
+									</table>
+								</div>
+								</div>
+								<div style="padding:5px">
+											<ul class="pagination" id="relevantjobs" style=float:right;>
+											 </ul>
+								</div>							 
+							</div>
+							
+							<div id="Applicant" class="tab-pane fade" >
+							<div  style="overflow-x: hidden; height: 425px; overflow-y: scroll;">
+							<table class="table table-bordered" id='applicantTableId' >
+									<thead>
+										<tr>
+											<th>JOB ID</th>
+											<th>IJP NAME</th>							
+											<th>DELIVERY UNIT</th>
+											<th>WORK LOCATION</th>
+											<th>YRS OF EXP</th>		
+											<th>LAST DATE TO APPLY</th>				
+										</tr>
+									</thead>
+									<tbody id="getApplicantApplied">
+									</tbody>		
+								</table>		
+								</div>
+								<div style="padding:5px">
+										<ul class="pagination" id="Applicantjobs" style=float:right;>
+										 </ul>
+								</div>
+							</div>
+							
+							
+							
+							<div class="modal fade" id="myModal" role="dialog">
+						    <div class="modal-dialog modal-lg">
+						      <div class="modal-content">
+						      <div class="col-sm-12 col-md-12 col-lg-12 main">
+						      
+						      <div class="modal-header" id="modal_headerId">
+						          <button type="button" class="close" data-dismiss="modal" id="Modal_closeButton" onclick="deleteResume();">&times;</button>
+						          <h4 class="modal-title" id="h4BoldID">VIEW IJP REQ AND APPLY</h4>
+						        </div>
+				
+				<div class="row"></div>
+				
+				<div class="upper">
+								
+						<div class="col-sm-12 col-md-12 col-lg-12 box"
+							style="border: 1px solid lightgray;">
+
+							<form class="form-horizontal">
+
+								
+								
+								<div class="col-sm-12 col-md-12 col-lg-12" style="background: #b3cde2 !important;padding: 5px;margin-bottom:5px; cursor: pointer;" data-toggle="collapse" data-target="#JobDeatilCollapse">
+								<b style="text-align: left;">Employee Details :</b>
+								</div>
+							
+									
+								<div id="JobDeatilCollapse" class="collapse col-sm-12 col-md-12 col-lg-12">	
+							
+								<div class="form-group">
+									<b class=" col-sm-3 col-md-3 col-lg-3"
+										>Employee PS Number : </b>
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;" id="modalPsNo"></span>
+									</div>
+									<b class=" col-sm-3 col-md-3 col-lg-3"
+										>Employee Name : </b>
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;"
+											id="modalGetName"></span>
+									</div>
+								</div>
+								<div class="form-group">
+									<b class=" col-sm-3 col-md-3 col-lg-3"
+										>Current Location : </b>
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;" id="modalLocation"></span>
+									</div>
+									<b class=" col-sm-3 col-md-3 col-lg-3"
+										>Current BU : </b>
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;" id="modalBu"></span>
+									</div>
+								</div>
+								<div class="form-group">
+									<b class=" col-sm-3 col-md-3 col-lg-3"
+										>IS PS Number : </b>
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;" id="modalIsPsNum"></span>
+									</div>
+									<b class=" col-sm-3 col-md-3 col-lg-3"
+										>Employee Email : </b>
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;" id="modalEmail"></span>
+									</div>
+								</div>
+								</div>
+							</form>
+
+
+						</div>
+						<div class="col-sm-12 col-md-12 col-lg-12 box"
+							style="border: 1px solid lightgray;">
+
+
+							<form class="form-horizontal">
+
+								
+								<div class="form-group box">
+								<div class="col-sm-12 col-md-12 col-lg-12" style="background: #b3cde2 !important;padding: 5px;" >
+								<b style="text-align: left;" class="col-sm-8 col-md-8 col-lg-8">Job Description For :     <span id="fetchJobName"></span></b>
+								<b style="text-align: right; display:none;" id="statusFormadalDisplay" class="col-sm-4 col-md-4 col-lg-4">Status: <span id="statusFormadal"></span></b>
+								</div>
+								</div>
+							
+									</form>
+									
+							<div>
+  
+							    <div class="panelForJob col-sm-12" ><div class="col-sm-5">Title / Position :</div><div class="col-sm-7" id="activeJobTitle"></div></div>
+							    <div class="panelForJob col-sm-12" ><div class="col-sm-5">Role / Job Description :</div><div class="col-sm-7" id="ActiveJobSDesc"></div></div>
+							    <div class="panelForJob col-sm-12" ><div class="col-sm-5">Skills :</div><div class="col-sm-7" id="ActiveJobsSkills"></div></div>
+							   	<div class="panelForJob col-sm-12"><div class="col-sm-5">Domain :</div><div class="col-sm-7" id="ActiveJobsDomain"></div></div>
+							    <div class="panelForJob col-sm-12"><div class="col-sm-5">Educational Qualification :</div><div class="col-sm-7" id="ActiveJobsQualification"></div></div>
+							    <div class="panelForJob col-sm-12" ><div class="col-sm-5">Work Location /Country :</div><div class="col-sm-7" id="ActiveJobsLocation"></div></div>
+							    <div class="panelForJob col-sm-12" ><div class="col-sm-5">Duration :</div><div class="col-sm-7" id="ActiveJobsDuration"></div></div>
+							    <div class="panelForJob col-sm-12" "><div class="col-sm-5">Visa :</div><div class="col-sm-7" >Authorized to work in the country</div></div>
+							    <div class="panelForJob col-sm-12" ><div class="col-sm-5">Number of  Positions :</div><div class="col-sm-7" >Initial</div></div>
+ 						 </div>
+								
+						</div>
+						<div class="col-sm-12 col-md-12 col-lg-12 box"style="border: 1px solid lightgray;">
+
+							<form class="form-horizontal" autocomplete="off" onsubmit="return false;">
+								
+							<div id="mobileNoDiv">
+								<div class="col-sm-12 col-md-12 col-lg-12" style="background: #b3cde2 !important;padding: 5px;">
+								<b style="text-align: left;">Apply for job :</b>
+								</div>
+							
+									<div class="col-sm-12 col-md-12 col-lg-12" style="padding:8px;">								
+							
+							<!-- 	<div class="form-group">
+									<b class=" col-sm-3 col-md-3 col-lg-3">Upload your latest resume : </b>									
+										<div class="col-sm-2 col-md-2 col-lg-2">
+											<input type="file" name="resume" id="UploadResume" required>
+											</div>	
+											<div class=" col-sm-3 col-md-3 col-lg-3">
+											</div>							
+									<div class=" col-sm-1 col-md-1 col-lg-1" align="right" style="display:none;" id="uploadDiv"> 
+										<button  type="button" class="btn btn-primary" data-dismiss="modal"	style="text-align: right;">Back</button>
+										</div>											
+										
+								</div> -->
+								<div class="form-group">
+								<div class="col-sm-6 col-md-6 col-lg-6" id="ContactDetailCond">
+								<b class=" col-sm-6 col-md-6 col-lg-6"><span style="color:red;">*</span>Mobile No : </b>									
+										<div class="col-sm-6 col-md-6 col-lg-6">
+										
+											<input type="text" class="form-control" id="mobile"
+																name="mobileno" required pattern="[0-9]{10}"
+																placeholder="Enter 10 Digit Number" required>
+												<input type="text" class="form-control" id="psNo" style="display:none;" name="psNo">
+												<input type="text" class="form-control"	id="jobID" style="display:none;" name="jobID" >
+										</div>
+										
+									</div>	
+									<div class="col-sm-6 col-md-6 col-lg-6" id="UpdateResumeWarn">
+											<p style='color:red;'>Update your resume in skill matrix to apply for the job</p>
+									</div>		
+									<div class=" col-sm-2 col-md-2 col-lg-2"> </div>		
+											<div class=" col-sm-1 col-md-1 col-lg-1" align="right"> 
+									<button type='submit' class=" btn btn-primary" value="Apply" onclick="insertResume();"style="text-align: right;" id="ButtonIdToApply">Apply</button>
+									
+										</div>
+										<div class=" col-sm-1 col-md-1 col-lg-1" align="right"> 
+										<button  type="button" class="btn btn-primary" data-dismiss="modal"onclick="clearFields();" 
+										style="text-align: right;">Back</button>
+										</div>
+										<br/><br/>
+										<div class="col-sm-12 col-md-12 col-lg-12" id="DownloadResume" style="display:none">											
+											<a id="downloadResumeByUser">Click here to download resume from skill matrix</a>
+											<a style="float:right" href="https://skillmatrix.lnttechservices.com:8080" target="_blank">Click here to update new resume</a>
+										</div>	
+										<div class="col-sm-12 col-md-12 col-lg-12" id="UpdateResumeSkillMatrix" style="display:none">											
+											<a  href="https://skillmatrix.lnttechservices.com:8080" target="_blank">Click here to update your resume</a>
+										</div>										
+										</div>	
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-12 col-lg-12" style="border:1px solid lightgray">
+								<b>NB:</b>
+								<p>
+								This Job Posting is only for L&T Technology services employees internal shfting .not for external entries .Employees in STP and those who have spent more that 18 months in the current role will be given priority
+								</p>
+								</div>
+								
+								<!-- <div class="form-group box" >
+								<div class=" col-sm-12 col-md-12 col-lg-12" style='border: 1px solid lightgray;'> 
+								<b>NB:</b>
+								<p>
+								This Job Posting is only for L&T Technology services employees internal shfting .not for external entries .Employees in STP and those who have spent more that 18 months in the current role will be given priority
+								</p>
+								</div>
+								</div> -->
+								
+								
+							</form>
+
+
+						</div>
+					
+				</div>
+						     
+						      </div>
+						    </div>
+						  </div>
+							
+							</div>
+							
+							<div class="modal fade" id="myModalForAppliedJobs" role="dialog">
+						    <div class="modal-dialog modal-lg">
+						      <div class="modal-content">
+						      <div class="col-sm-12 col-md-12 col-lg-12 main">
+						      
+						      <div class="modal-header" id="modal_headerId">
+						          <button type="button" class="close" data-dismiss="modal" id="Modal_closeButton">&times;</button>
+						          <h4 class="modal-title" id="h4BoldID">VIEW IJP REQ</h4>
+						        </div>
+				
+								<div class="row"></div>
+				
+								<div class="upper">
+								
+								<div class="col-sm-12 col-md-12 col-lg-12 box" style="border: 1px solid lightgray;">
+
+							<form class="form-horizontal">
+								<div class="col-sm-12 col-md-12 col-lg-12" style="background: #b3cde2 !important;padding: 5px;margin-bottom:5px; cursor: pointer;" data-toggle="collapse" data-target="#JobDeatilCollapseApplied">
+								<b style="text-align: left;">Employee Details :</b>
+								</div>
+							<div  id="JobDeatilCollapseApplied" class="collapse  col-sm-12 col-md-12 col-lg-12">
+								<div class="form-group">
+									<b class=" col-sm-3 col-md-3 col-lg-3"
+										>Employee PS Number : </b>
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;" id="modalPsNoForAppliedJobs"></span>
+									</div>
+									<b class=" col-sm-3 col-md-3 col-lg-3"
+										>Employee Name : </b>
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;"
+											id="modalGetNameForAppliedJobs"></span>
+									</div>
+								</div>
+								<div class="form-group">
+									<b class=" col-sm-3 col-md-3 col-lg-3"
+										>Current Location : </b>
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;" id="modalLocationForAppliedJobs"></span>
+									</div>
+									<b class=" col-sm-3 col-md-3 col-lg-3"
+										>Current BU : </b>
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;" id="modalBuForAppliedJobs"></span>
+									</div>
+								</div>
+								<div class="form-group">
+									<b class=" col-sm-3 col-md-3 col-lg-3"
+										>IS PS Number : </b>
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;" id="modalIsPsNumForAppliedJobs"></span>
+									</div>
+									<b class=" col-sm-3 col-md-3 col-lg-3"
+										>Employee Email : </b>
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<span class=" col-sm-12 " style="text-align: left;" id="modalEmailForAppliedJobs"></span>
+									</div>
+								</div>
+							</div>	
+							</form>
+
+						</div>
+						<div class="col-sm-12 col-md-12 col-lg-12 box" style="border: 1px solid lightgray;">
+							<form class="form-horizontal">
+
+								<div class="form-group box">
+								<div class="col-sm-12 col-md-12 col-lg-12" style="background: #b3cde2 !important;padding: 5px; " >
+								<b style="text-align: left;">Job Description For :     <span id="fetchJobNameForAppliedJobs"></span></b>
+								</div>
+								</div>
+							
+									</form>
+									
+							<div>
+  
+							    <div class="panelForJob col-sm-12" ><div class="col-sm-5">Title / Position :</div><div class="col-sm-7" id="activeJobTitleForAppliedJobs"></div></div>
+							    <div class="panelForJob col-sm-12" ><div class="col-sm-5">Role / Job Description :</div><div class="col-sm-7" id="ActiveJobSDescForAppliedJobs"></div></div>
+							    <div class="panelForJob col-sm-12" ><div class="col-sm-5">Skills :</div><div class="col-sm-7" id="ActiveJobsSkillsForAppliedJobs"></div></div>
+							   	<div class="panelForJob col-sm-12"><div class="col-sm-5">Domain :</div><div class="col-sm-7" id="ActiveJobsDomainForAppliedJobs"></div></div>
+							    <div class="panelForJob col-sm-12"><div class="col-sm-5">Educational Qualification :</div><div class="col-sm-7" id="ActiveJobsQualificationForAppliedJobs"></div></div>
+							    <div class="panelForJob col-sm-12" ><div class="col-sm-5">Work Location /Country :</div><div class="col-sm-7" id="ActiveJobsLocationForAppliedJobs"></div></div>
+							    <div class="panelForJob col-sm-12" ><div class="col-sm-5">Duration :</div><div class="col-sm-7" id="ActiveJobsDurationForAppliedJobs"></div></div>
+							    <div class="panelForJob col-sm-12" "><div class="col-sm-5">Visa :</div><div class="col-sm-7" >Authorized to work in the country</div></div>
+							    <div class="panelForJob col-sm-12" ><div class="col-sm-5">Number of  Positions :</div><div class="col-sm-7" >Initial</div></div>
+ 						 </div>
+								
+						</div>
+						<div class="col-sm-12 col-md-12 col-lg-12 box"style="border: 1px solid lightgray;">
+
+							<form class="form-horizontal">
+
+								<div class="col-sm-12 col-md-12 col-lg-12" style="border:1px solid lightgray">
+								<b>NB:</b>
+								<p>
+								This Job Posting is only for L&T Technology services employees internal shfting not for external entries. Employees in STP and those who have spent more that 18 months in the current role will be given priority
+								</p>
+								</div>
+							
+							</form>
+						</div>
+					
+				</div>
+						     
+						      </div>
+						    </div>
+						  </div>
+							
+							</div>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							<!-- 	<div class="modal fade" id="myModal" role="dialog" style="disply:none">
+									<div class="modal-dialog modal-lg">
+
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<img src="Images/ijp.jpg" alt="logo" width="100%">
+											</div>
+											<div class="modal-body">
+												<form>
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #28ace3; padding: 7px; text-align: center; color: white;">Title/Positionss</span>
+															</div>
+															<div class="col-sm-8 col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="activeJobTitle"></span>
+															</div>
+														</div>
+													</div>
+
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #0a4680; padding: 7px; text-align: center; color: white;">Job
+																	Description</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="ActiveJobSDesc"></span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #28ace3; padding: 7px; text-align: center; color: white;">Skills</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<textarea
+																	class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="ActiveJobsSkills">
+																													</textarea>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #0a4680; padding: 7px; text-align: center; color: white;">Domain</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="ActiveJobsDomain"></span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #28ace3; padding: 7px; text-align: center; color: white;">
+																	Qualification</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="ActiveJobsQualification"></span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #0a4680; padding: 7px; text-align: center; color: white;">Years
+																	of Experience</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="ActiveJobsExperince"></span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #28ace3; padding: 7px; text-align: center; color: white;">Work
+																	Location/Country</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="ActiveJobsLocation"></span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #0a4680; padding: 7px; text-align: center; color: white;">Duration
+																	(In months)</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="ActiveJobsDuration"></span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #28ace3; padding: 7px; text-align: center; color: white;">Visa</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;">Authorized
+																	to work in the country</span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #0a4680; padding: 7px; text-align: center; color: white;">Number
+																	of Positions</span>
+															</div>
+															<div class="col-sm-2 col-lg-2 col-md-2 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #0a4680; padding: 7px; text-align: center; color: white;">Initial</span>
+															</div>
+															<div class="col-sm-2 col-lg-2 col-md-2">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="initialReq"></span>
+															</div>
+															<div class="col-sm-2 col-lg-2 col-md-2">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #0a4680; padding: 7px; text-align: center; color: white;">Revised</span>
+															</div>
+															<div class="col-sm-2 col-lg-2 col-md-2">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="revisedReq"></span>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-4 col-lg-4 col-md-4 ">
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; background-color: #28ace3; padding: 7px; text-align: center; color: white;">Expected
+																	Fulfillment Date</span>
+															</div>
+															<div class="col-sm-8  col-md-8 col-lg-8">
+
+
+																<span class="form-control col-sm-12 col-md-12 col-lg-12"
+																	style="border: 1px solid lightgrey; box-sizing: border-box; padding: 7px;" id="ActiveJobsExpectedFullDate"></span>
+															</div>
+														</div>
+													</div>
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-12 col-md-12 col-lg-12"
+																style="background-color: #fcc110; height: 50px; padding: 10px; color: green;">
+																<span class=" col-sm-4 col-md-4 col-lg-4">Point
+																	Of Contact</span> <span class=" col-sm-8 col-md-8 col-lg-8">NA</span>
+															</div>
+														</div>
+													</div>
+												</form>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default"
+													data-dismiss="modal">Close</button>
+
+												<button type="button" class="btn btn-default"
+													data-toggle="modal" data-target="#applyJobModal" data-backdrop="static"
+													style="overflow: hidden;" onclick="clearFields();" id="ButtonIdToApply">Click Here to Apply</button>
+
+											</div>
+										</div>
+
+
+
+
+									</div>
+
+								</div> -->
+						
+					
+					
+					<div class="modal fade" id="applyJobModal" role="dialog">
+									<div class="modal-dialog modal-md">
+										<div class="modal-content" style="margin-top:30%;">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Apply Job</h4>
+											</div>
+											<div class="modal-body">
+												<form class="form-horizontal" id="UploadResumeForm" autocomplete="off" onsubmit="return false;">
+
+													<div class="form-group">
+														<span class="control-span col-sm-2">JobID:</span>
+														<div class="col-sm-10">
+															<input type="text" class="form-control"
+																 id="jobID"
+																name="jobID" required readonly>
+														</div>
+													</div>
+
+
+													<div class="form-group">
+														<span class="control-span col-sm-2">PS No:</span>
+														<div class="col-sm-10">
+															<input type="text" class="form-control" id="psNo"
+																 name="psNo" readonly>
+
+														</div>
+													</div>
+													<!-- <div class="form-group">
+														<span class="control-span col-sm-2">Name:</span>
+														<div class="col-sm-10">
+															<input type="text" class="form-control" id="name"
+																name="name" value="${list[1]}" required readonly>
+														</div>
+													</div> -->
+
+													<div class="form-group">
+														<span class="control-span col-sm-2"><span style="color:red;">*</span>Mobile No:</span>
+														<div class="col-sm-10">
+															<input type="text" class="form-control" id="mobile"
+																name="mobileno" required pattern="[0-9]{10}"
+																placeholder="Enter 10 Digit Mobile Number" required>
+
+														</div>
+													</div>
+													
+													<a href="Images/LTTechServices_Name_PS No.docx" download>Click
+														here to download Standard Format</a> 
+														<div class="modal-footer">
+														<input type="submit"
+														value="Apply" onclick="getResumePath();"class="btn btn-primary" style="float: right">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal"
+														style="float: right; margin-right: 5px;"  onclick="clearFields();">Close</button>
+														</div>
+
+												</form>
+											</div>
+
+										</div>
+									</div>
+								</div>			
+					
+						
+						<div class="modal fade" id="myModalApplicant" role="dialog">
+						    <div class="modal-dialog modal-lg">
+						      <div class="modal-content">
+						        <div class="modal-header" id="modal_headerId">
+						          <button type="button" class="close" data-dismiss="modal" id="Modal_closeButton" onclick="deleteResumeRM()">&times;</button>
+						          <h4 class="modal-title" id="h4BoldID">APPLICANTS</h4>
+						        </div>
+						        <div class="modal-body" style="height: 450px;" id='applicantsForRM'>
+										<table class="table table-bordered" id="applicantTableId2">
+											<thead>
+												<tr>
+													<th>PS NUMBER</th>
+													<th>NAME</th>
+													<th>CONTACT DETAILS</th>
+													<th>RESUME</th>
+													<th>SHORTLIST</th>
+													<th>REJECT</th>
+													<th>SELECT</th>
+													
+												</tr>
+											</thead>
+											<tbody id="applicantsList">
+
+											</tbody>
+										</table>
+									</div>
+									 <div class="modal-body" style="height: 450px; dispaly:none" id='applicantsForAdmin'>
+										<table class="table table-bordered" id="applicantTableId2">
+											<thead>
+												<tr>
+													<th>PS NUMBER</th>
+													<th>NAME</th>
+													<th>CONTACT DETAILS</th>
+													<th>RESUME</th>
+													<th>DENY</th>
+												</tr>
+											</thead>
+											<tbody id="applicantsListForAdmin">
+
+											</tbody>
+										</table>
+									</div>
+						        <div class="modal-footer">
+						         <button type="button" class="btn btn-default" id='SaveAplicantForRM' onclick='saveShortListRM()'>Save</button>
+						         <button type="button" class="btn btn-default" id='RejectAplicantForAdmin' onclick='rejectJobForAdmin();'>Deny</button>
+						         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        </div>
+						      </div>
+						    </div>
+						  </div>
+						  	<div class="modal fade" id="emailForShortlist" role="dialog">
+									<div class="modal-dialog modal-md" >
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" onclick='refreshEmail()'>&times;</button>
+												<h4 class="modal-title">Please enter name the of Project Manager for the requested job</h4>
+											</div>
+											<div class="modal-body">
+												<form class="form-horizontal" autocomplete="off" onsubmit="return false;">
+
+													<div class="form-group">
+														<span class="control-span col-sm-2">Name:</span>
+														<div class="col-sm-3">
+															<input type="text" class="form-control" id='nameForPM' onkeyup="listEmailForPm(event)" id='psNoForRMEmail' required>
+														</div>
+														<p class="col-sm-7" id='emailForPM'></p>
+														<p id='NameForPMselected' style='display:none'></p>
+													</div>
+													<div style="overflow-x: hidden; height: 170px; overflow-y: scroll;" id='DivForEmailList'>
+													<table class="table table-bordered" id="EmailTableForRM">
+														<thead>
+															<tr>																
+																<th>Email</th>
+															</tr>
+														</thead>
+														<tbody id="MailListForPM">
+			
+														</tbody>
+													</table>
+												</div>													
+													
+											<div class="modal-footer">														
+													<button type="button" class="btn btn-primary" data-dismiss="modal" style="float: right; margin-right: 5px;" onclick='refreshEmail()'>Close</button>
+													<button type="button" class="btn btn-primary" style="float: right; margin-right: 5px;" onclick="SendMailForRM();">Send</button>													
+											</div>
+
+												</form>
+											</div>
+
+										</div>
+									</div>
+								</div>	
+						  <div class="modal fade" id="myModelAlert" role="dialog" >
+									<div class="modal-dialog modal-sm" style="top:30%;">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Alert</h4>
+											</div>
+											<div class="modal-body">
+												<h4 id="getSuccessMessage"></h4>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+											</div>
+										</div>
+									</div>
+								</div>
+						
+						
+						
+					
+				</div>
+				</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>
